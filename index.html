@@ -85,14 +85,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
 .chips{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
 .chips span{font:600 11px Inter;letter-spacing:.12em;text-transform:uppercase;padding:8px 13px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
-/* beneficios */
-.bens{border-bottom:1px solid var(--ln)}
-.ben-g{display:grid;grid-template-columns:repeat(4,1fr)}
-.ben{display:flex;gap:14px;align-items:center;padding:28px 22px;border-right:1px solid var(--ln)}
-.ben:last-child{border-right:0}
-.ben svg{width:30px;height:30px;color:var(--g7);flex:none}
-.ben b{display:block;font:700 13px Montserrat;text-transform:uppercase;letter-spacing:.04em;color:var(--g9)}
-.ben span{font-size:13px;color:var(--mu)}
+/* beneficios: banda roja que corre sola (la misma de Aurel) */
+.bb{background:#DD183B;color:#fff;overflow:hidden;padding:26px 0}
+.bb-p{display:flex;width:max-content;animation:bbm 30s linear infinite}
+@keyframes bbm{to{transform:translateX(-50%)}}
+.bb-i{display:flex;align-items:center;gap:16px;padding:0 44px;position:relative;flex:none}
+.bb-i:after{content:"";position:absolute;right:0;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#fff;opacity:.45}
+.bb-ic{width:52px;height:52px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center}
+.bb-ic svg{width:30px;height:30px}
+.bb-tx{display:flex;flex-direction:column;white-space:nowrap}
+.bb-tx b{font:800 22px/1.15 Montserrat;letter-spacing:-.01em;text-transform:uppercase}
+.bb-tx span{font:500 15px/1.35 Inter;opacity:.88;margin-top:3px}
 /* categorías */
 .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .cat{position:relative;aspect-ratio:3/4.2;border-radius:6px;overflow:hidden;background:var(--g9);text-decoration:none;color:#fff;display:block}
@@ -157,8 +160,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .why .kick{color:var(--g2)}.why .h2{color:#fff}.why .h2 em{background:var(--g2);color:var(--g9)}
 .why .sub{color:#D8C8B8}
 .why-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
-.why-l{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-.wi{border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px}
+.why-l{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.wi{border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:28px 22px;text-align:center}
+.wi svg{margin:0 auto}
 .wi svg{width:28px;height:28px;color:var(--g2)}
 .wi b{display:block;font:700 15px Montserrat;text-transform:uppercase;margin-top:14px;letter-spacing:.01em}
 .wi p{font-size:13.5px;line-height:1.55;color:#D8C8B8;margin-top:6px}
@@ -286,9 +290,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .hero p{font-size:15px;margin-top:14px}
   .hero .cta{margin-top:22px}.hero .cta .btn{flex:1;padding:0 12px}
   .chips{display:none}
-  .ben-g{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-  .ben-g::-webkit-scrollbar{display:none}
-  .ben{min-width:78%;scroll-snap-align:start;padding:20px 18px}
+  .bb{padding:18px 0}.bb-i{gap:12px;padding:0 28px}.bb-ic{width:42px;height:42px}.bb-ic svg{width:24px;height:24px}.bb-tx b{font-size:17px}.bb-tx span{font-size:13px}
   .cats{grid-template-columns:1fr 1fr;gap:10px}
   .cat b{font-size:15px}.cat div{padding:14px}
   .mas a{font-size:11px;padding:8px 12px}
@@ -297,9 +299,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .card h3{font-size:13.5px;min-height:36px}
   .pr{font-size:17px}.trf{font-size:12.5px}.trf em{font-size:10px;padding:1px 6px}.cuo{font-size:12px}.op{font-size:11px}
   .head .link{display:none}
-  .ps-g,.why-g,.faq-g{grid-template-columns:1fr;gap:36px}
+  .faq-g{grid-template-columns:1fr;gap:36px}
+  .ps-g{grid-template-columns:1fr 132px;gap:16px}.ps .h2{font-size:21px}.ps .sub{font-size:13.5px;margin-top:10px}.ps .btn{height:42px;padding:0 16px;font-size:11px}.ps .vid{max-width:none;border-radius:10px}.ps .snd{right:6px;bottom:6px;padding:6px;font-size:0;gap:0}.ps .ig{display:none}
   .vid{max-width:300px}
-  .why-l{grid-template-columns:1fr}
+  .why-l{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}.wi{padding:20px 12px}.wi b{font-size:13px}.wi p{font-size:12.5px}
   .reel{width:150px}
   .tc{width:280px}
   .cta-b{grid-template-columns:1fr;padding:40px 24px}.cta-b .h2{font-size:26px}
@@ -367,13 +370,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </div>
   </section>
 
-  <!-- 4 · Beneficios -->
-  <section class="bens"><div class="wrap"><div class="ben-g">
-    <div class="ben rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01"/></svg><div><b>30% OFF</b><span>Pagando con transferencia</span></div></div>
-    <div class="ben rv" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg><div><b>Cuotas sin interés</b><span>En 2, 3 y 6 cuotas</span></div></div>
-    <div class="ben rv" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envíos al país</b><span>Te llega a tu casa</span></div></div>
-    <div class="ben rv" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><div><b>Con stock</b><span>Despacho sin esperas</span></div></div>
-  </div></div></section>
+  <!-- 4 · Beneficios: banda roja que corre sola -->
+  <section class="bb" aria-label="Beneficios"><div class="bb-p" id="bb"></div></section>
 
   <!-- 5 · Categorías con video -->
   <section class="sec" id="cats"><div class="wrap">
@@ -384,7 +382,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <a class="cat rv" style="--i:2" href="#prods"><video class="av" src="m/c-puf.mp4" poster="m/c-puf.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Puff y baúles</b><span>Con guardado</span></div></a>
       <a class="cat rv" style="--i:3" href="#prods"><video class="av" src="m/c-deco.mp4" poster="m/c-deco.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Deco</b><span>Mármol, vasos y jarras</span></div></a>
     </div>
-    <div class="mas rv"><a href="#prods">Mesas</a><a href="#prods">Sillones</a><a href="#prods">Pie de cama</a><a href="#prods">Iluminación</a><a href="#prods">Relojes</a><a href="#prods">Sets de baño</a></div>
   </div></section>
 
   <!-- 6 · Productos destacados -->
@@ -394,18 +391,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Tus precios reales, sin «,00» ni centavos: precio, transferencia y cuotas salen de tu Tiendanube.</div>
   </div></section>
 
-  <!-- 7 · Problema → solución con video -->
+  <!-- 7 · ¿Por qué decorar tiene que ser caro? -->
   <section class="sec ps" id="ps"><div class="wrap ps-g">
     <div class="rv">
-      <div class="pq">El problema</div>
-      <div class="h2">¿Por qué decorar una casa tiene que ser <em>tan caro</em>?</div>
-      <p class="sub">Entrás a un negocio de decoración, te querés llevar todo y con el precio no podés. Por eso nació Noam: productos de alta calidad, con diseño hermoso y a buen precio.</p>
-      <ul class="ps-l">
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Alta calidad</b> <span>— bouclé, teddy, mármol, travertino y madera.</span></div></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Buenos precios</b> <span>— y 30% OFF pagando con transferencia.</span></div></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Pocos detalles, otra casa</b> <span>— un espejo, una mesa o un puff alcanzan.</span></div></li>
-      </ul>
-      <a class="btn" href="#prods">Empezá por un detalle</a>
+      <div class="h2">¿Por qué decorar tiene que ser <em>caro</em>?</div>
+      <p class="sub">En Noam traemos piezas de alta calidad, con diseño hermoso y a buen precio, para que cambies tu casa con pocos detalles.</p>
+      <a class="btn" href="#prods" style="margin-top:26px">Ver productos</a>
     </div>
     <div class="vid rv" style="--i:2">
       <div class="ig"><img src="m/logo-dark.png" alt="">noam.homeandeco</div>
@@ -427,21 +418,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="grid" id="g2"></div>
   </div></section>
 
-  <!-- 10 · Por qué elegirnos -->
-  <section class="sec why" id="why"><div class="wrap why-g">
-    <div class="vid rv">
-      <div class="ig"><img src="m/logo-dark.png" alt="">Armando un pedido</div>
-      <video class="av snd-v" src="m/why.mp4" poster="m/why.jpg" muted loop playsinline preload="none"></video>
-      <button class="snd" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/></svg><span>Activar sonido</span></button>
-    </div>
-    <div>
-      <div class="rv"><div class="kick">Por qué elegirnos</div><div class="h2">Trabajamos <em>con stock</em>.</div><p class="sub">Lo que ves en la web está en nuestro depósito, listo para salir. Armamos cada pedido con cuidado y te lo mandamos a cualquier punto del país.</p></div>
-      <div class="why-l">
-        <div class="wi rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><b>Stock propio</b><p>Sin esperas de fabricación: tu pedido sale del depósito.</p></div>
-        <div class="wi rv" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>Envíos a todo el país</b><p>Embalado con cuidado, hasta la puerta de tu casa.</p></div>
-        <div class="wi rv" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.3 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><b>Diseño que combina</b><p>Una línea pensada para armar toda tu casa.</p></div>
-        <div class="wi rv" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg><b>Buenos precios</b><p>30% OFF transfiriendo o en cuotas sin interés.</p></div>
-      </div>
+  <!-- 10 · Por qué elegirnos (solo íconos) -->
+  <section class="sec why" id="why"><div class="wrap">
+    <div class="rv" style="text-align:center"><div class="kick">Por qué elegirnos</div><div class="h2">Trabajamos <em>con stock</em>.</div></div>
+    <div class="why-l">
+      <div class="wi rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><b>Stock propio</b><p>Tu pedido sale de nuestro depósito.</p></div>
+      <div class="wi rv" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>Envíos al país</b><p>Bien embalado, hasta tu casa.</p></div>
+      <div class="wi rv" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.3 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><b>Diseño que combina</b><p>Para armar toda tu casa.</p></div>
+      <div class="wi rv" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg><b>Buenos precios</b><p>30% OFF o cuotas sin interés.</p></div>
     </div>
   </div></section>
 
@@ -533,6 +517,11 @@ const T=[['Sofía','Puff Lia Con Guardado','Llegó perfecto y es más lindo en p
 let TT=[...T];
 const tc=(t,n)=>`<div class="tc${n?' nuevo':''}"><div class="st">${star.repeat(t[3]||5)}</div><p>«${t[2]}»</p><div class="who"><i>${t[0][0]}</i><div>${t[0]}<small>Compró ${t[1]||'en Noam'}</small></div></div></div>`;
 const pintarT=n=>{const h=TT.map((t,i)=>tc(t,n&&i===0)).join('');$('#mt').innerHTML=h+h};pintarT();
+// beneficios (banda roja)
+const BI={t:'<svg viewBox="0 0 44 44" fill="none" stroke="#DD183B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="36" height="21" rx="2"/><circle cx="22" cy="22.5" r="4.5"/><path d="M10 17.5v.01M34 27.5v.01"/></svg>',c:'<svg viewBox="0 0 44 44" fill="none" stroke="#DD183B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="36" height="21" rx="2"/><path d="M4 19h36M10 27h7"/></svg>',e:'<svg viewBox="0 0 44 44" fill="none" stroke="#DD183B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="13" width="23" height="16" rx="1"/><path d="M26 18h7l5 5.5V29H26z"/><circle cx="13" cy="32" r="3"/><circle cx="31" cy="32" r="3"/></svg>',s:'<svg viewBox="0 0 44 44" fill="none" stroke="#DD183B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6 7 13v18l15 7 15-7V13z"/><path d="m7 13 15 7 15-7M22 20v18"/></svg>'};
+const BB=[['t','30% OFF en transferencia','En todos los productos'],['c','Cuotas sin interés','En 2, 3 y 6 cuotas'],['e','Envíos al país','Te llega a tu casa'],['s','Con stock','Despacho sin esperas']];
+const bbSet='<div style="display:flex">'+BB.map(x=>`<div class="bb-i"><span class="bb-ic">${BI[x[0]]}</span><span class="bb-tx"><b>${x[1]}</b><span>${x[2]}</span></span></div>`).join('')+'</div>';
+$('#bb').innerHTML=bbSet+bbSet+bbSet+bbSet;
 // FAQ
 const F=[['¿Hacen envíos a todo el país?','Sí. Trabajamos con stock y despachamos desde nuestro depósito a cualquier punto del país, bien embalado.'],['¿Cómo funciona el 30% OFF?','Elegís transferencia al finalizar la compra y el descuento se aplica solo, en todos los productos.'],['¿Puedo pagar en cuotas?','Sí, en 2, 3 o 6 cuotas sin interés con tarjeta de crédito.'],['¿Cómo funciona el 2x1 en espejos?','Llevás un espejo grande y elegís un espejo chico entre las opciones de la promo.'],['¿Puedo consultar antes de comprar?','Claro. Escribinos por WhatsApp y te ayudamos con medidas, colores y combinaciones.']];
 $('#fq').innerHTML=F.map((f,i)=>`<details class="fq"${i?'':' open'}><summary>${f[0]}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary><p>${f[1]}</p></details>`).join('');
