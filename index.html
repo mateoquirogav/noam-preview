@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noam · Vista previa · PRAXIS</title>
+<title>Noam · Estructura 1 · PRAXIS</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--cafe:#3A1D0B;--cafe2:#5A3519;--arena:#E9DFD3;--crema:#F6F1EA;--hueso:#FBF8F4;--tinta:#22140A;--mu:#7A6A5D;--ln:#E7DDD1;--rojo:#E04B3A;--w:#fff;
+/* colores de Noam: café de su barra (#331B00), café de sus botones, arena y beige de sus banners */
+:root{--ink:#1E1107;--g9:#331B00;--g7:#6B4A2F;--g5:#9C7B5E;--g2:#E0D0C1;--g1:#F3ECE4;--cr:#F5EEEA;--mu:#6F6258;--ln:#E8DED4;--w:#fff;--rojo:#D9473A;
  --verde-f:#EFF8F2;--verde-b:#BFE3CB;--verde-t:#1F6B43;--celeste-f:#EFF5FB;--celeste-b:#C4DAEE;--celeste-t:#244E73}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:#E8E2DA;-webkit-font-smoothing:antialiased;touch-action:manipulation}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#E9E3DC;-webkit-font-smoothing:antialiased;touch-action:manipulation}
 svg{display:block}
-a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- barra PRAXIS ---------- */
 .tool{position:fixed;inset:0 0 auto 0;height:58px;z-index:90;background:#0F1B2E;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:14px}
@@ -30,7 +30,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .chrome{height:38px;flex:none;background:#F1F1EE;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid #E2E2DD}
 .chrome i{width:11px;height:11px;border-radius:50%;background:#D9D9D4}
 .chrome .url{margin-left:14px;flex:1;max-width:420px;height:24px;border-radius:7px;background:#fff;display:flex;align-items:center;gap:6px;padding:0 10px;font-size:12px;color:#777}
-.screen{flex:1;overflow-y:auto;overflow-x:hidden;position:relative}
+.screen{flex:1;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth}
 .device.mob{max-width:390px;border-radius:44px;border:10px solid #111;height:min(100%,844px)}
 .device.mob .chrome{display:none}
 @media (max-width:760px){
@@ -39,306 +39,270 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .chrome,.seg{display:none}
 }
 /* ---------- sitio ---------- */
-.site{container-type:inline-size;background:var(--hueso)}
+.site{container-type:inline-size;background:#fff}
 .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
-.kick{font:600 11px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--cafe2);opacity:.8;margin-bottom:10px}
-.h2{font:700 34px/1.1 Montserrat;letter-spacing:-.02em;color:var(--cafe)}
-.h2 em{font-style:normal;color:var(--rojo)}
+.kick{font:600 11px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--g5);margin-bottom:10px}
+.h2{font:800 34px/1.08 Montserrat;letter-spacing:-.02em;text-transform:uppercase;color:var(--g9)}
+.h2 em{font-style:normal;background:var(--g9);color:#fff;padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .sub{font-size:16px;line-height:1.6;color:var(--mu);margin-top:12px;max-width:520px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 26px;border-radius:999px;font:700 12.5px Montserrat;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;background:var(--cafe);color:#fff;border:0;transition:background-color .2s}
-.btn:hover{background:var(--cafe2)}
-.btn.w{background:#fff;color:var(--cafe)}.btn.w:hover{background:var(--crema)}
-.btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.75)}.btn.o:hover{background:rgba(255,255,255,.12)}
-.btn.l{background:transparent;color:var(--cafe);box-shadow:inset 0 0 0 1.5px var(--cafe)}
-.sec{padding:84px 0;position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 26px;border-radius:4px;font:700 13px Montserrat;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:var(--g9);color:#fff;border:0}
+.btn.w{background:#fff;color:var(--g9)}.btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.btn.l{background:transparent;color:var(--g9);box-shadow:inset 0 0 0 1.5px var(--g9)}
+.sec{padding:84px 0}
 .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px;gap:20px}
-.link{font:600 13px Inter;color:var(--cafe);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* 1 · barra de anuncios + encabezado (como Cry: transparente sobre el video, la barra aparece al pasar el banner) */
-.top{position:sticky;top:0;z-index:40;height:0}
-.bar{background:var(--cafe);color:#F3E9DD;height:34px;overflow:hidden;transform:translateY(-100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);position:absolute;inset:0 0 auto}
-.bar-t{display:flex;width:max-content;height:34px;align-items:center;animation:mq 36s linear infinite}
-.bar-t span{font:600 11px Inter;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:26px}
-.bar-t span:after{content:"";width:4px;height:4px;border-radius:50%;background:var(--rojo)}
-.bar-t b{font-weight:800;color:#fff}
-.hd{position:absolute;left:0;right:0;top:0;color:#fff;transition:top .45s cubic-bezier(.2,.7,.2,1),background-color .35s,color .35s,box-shadow .35s}
-.hd:before{content:"";position:absolute;inset:0 0 auto;height:190px;background:linear-gradient(180deg,rgba(24,12,4,.55),rgba(24,12,4,.2) 55%,rgba(24,12,4,0));pointer-events:none;transition:opacity .35s}
-.hd-in{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center;height:92px;transition:height .45s cubic-bezier(.2,.7,.2,1)}
-.hd-nav{display:flex;gap:24px;font:600 12px Inter;letter-spacing:.14em;text-transform:uppercase}
-.hd-nav a{padding:6px 0;border-bottom:1.5px solid transparent;transition:border-color .2s}
-.hd-nav a:hover{border-color:currentColor}
-.hd-logo{position:relative;width:150px;height:58px;display:block;transition:width .45s,height .45s}
-.hd-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s}
-.hd-logo .ld{opacity:0}
-.hd-ico{display:flex;gap:20px;align-items:center;justify-self:end}
-.hd-ico svg,.burger svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6}
-.cart{position:relative}
-.cart b{position:absolute;top:-6px;right:-8px;min-width:17px;height:17px;border-radius:9px;background:var(--rojo);color:#fff;font:700 10px/17px Inter;text-align:center}
-.burger{display:none}
-.site.pasado .bar{transform:none}
-.site.pasado .hd{top:34px;background:#fff;color:var(--cafe);box-shadow:0 1px 0 var(--ln)}
-.site.pasado .hd:before{opacity:0}
-.site.pasado .hd-in{height:64px}
-.site.pasado .hd-logo{width:104px;height:40px}
-.site.pasado .hd-logo .ll{opacity:0}.site.pasado .hd-logo .ld{opacity:1}
-
-/* 2 · banner con video, quieto: los bloques suben por encima */
-.hero{position:sticky;top:0;height:var(--sh,760px);min-height:560px;z-index:0;overflow:hidden;background:#cbbfb0}
-.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero:after{content:"";position:absolute;inset:auto 0 0;height:65%;background:linear-gradient(0deg,rgba(28,14,4,.68),rgba(28,14,4,0));pointer-events:none}
-.hero-in{position:absolute;z-index:2;left:0;right:0;bottom:110px;color:#fff}
-.hero .kick{color:#F3E9DD;opacity:1}
-.hero h1{font:700 64px/1.02 Montserrat;letter-spacing:-.03em;max-width:12ch;margin:10px 0 16px}
-.hero p{max-width:44ch;font-size:17px;line-height:1.6;color:#F4ECE2;margin-bottom:26px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-.v-cel{display:none}
-main{position:relative;z-index:1;background:var(--hueso)}
-
-/* 3 · beneficios 2 × 2 */
-.bens{background:var(--hueso);padding:70px 0}
-.ben-w{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
-.ben-g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ben{background:#fff;border:1px solid var(--ln);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
-.ben i{width:52px;height:52px;border-radius:50%;background:var(--crema);display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--ln)}
-.ben i svg{width:24px;height:24px;stroke:var(--cafe);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.ben b{display:block;font:700 17px/1.2 Montserrat;color:var(--cafe)}
-.ben span{display:block;font-size:13.5px;line-height:1.5;color:var(--mu);margin-top:5px}
-.ben em{position:absolute;top:22px;right:22px;font:700 10px Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo);font-style:normal}
-
-/* 4 · categorías de a 3, scrolleables */
-.cat-w{position:relative}
-.cats{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth;padding-bottom:4px}
-.cats::-webkit-scrollbar{display:none}
-.cat{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;scroll-snap-align:start;background:var(--arena);display:block}
-.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.cat:hover img{transform:scale(1.04)}
-.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(28,14,4,.7))}
-.cat>div{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
-.cat b{font:700 21px Montserrat;letter-spacing:-.01em}
-.cat span{display:block;font-size:12.5px;opacity:.85;margin-top:3px}
-.cat u{flex:none;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--cafe);display:grid;place-items:center;text-decoration:none}
-.cat u svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-.flechas{display:flex;gap:8px}
-.flechas button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:#fff;display:grid;place-items:center;color:var(--cafe)}
-.flechas button:hover{border-color:var(--cafe)}
-.flechas svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
-.puntos{display:flex;gap:6px;justify-content:center;margin-top:18px}
-.puntos i{width:6px;height:6px;border-radius:3px;background:var(--ln);transition:width .3s,background-color .3s}
-.puntos i.on{width:22px;background:var(--cafe)}
-
-/* 5 · tarjetas con embudo (estilo Elike) + opiniones */
+.link{font:600 13px Inter;color:var(--g9);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+/* anuncio */
+.ann{background:var(--g9);color:#fff;height:38px;overflow:hidden;position:relative}
+.ann-t{display:flex;flex-direction:column;animation:ann 12s infinite}
+.ann-t div{height:38px;display:flex;align-items:center;justify-content:center;gap:10px;font:500 12px Inter;letter-spacing:.06em}
+.ann-t svg{width:15px;height:15px;color:var(--g2)}
+@keyframes ann{0%,28%{transform:translateY(0)}33%,61%{transform:translateY(-38px)}66%,94%{transform:translateY(-76px)}100%{transform:translateY(-114px)}}
+/* encabezado */
+.hdr{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+.hdr .wrap{height:76px;display:flex;align-items:center;gap:30px}
+.logo{display:block;text-decoration:none}
+.logo img{height:46px;width:auto;display:block}
+.nav{display:flex;gap:28px;margin-left:auto;font:600 13px Inter}
+.nav a{color:var(--ink);text-decoration:none}
+.ico{display:flex;gap:16px;margin-left:24px;color:var(--g9)}
+.ico svg{width:22px;height:22px}
+.cart{position:relative}.cart b{position:absolute;top:-6px;right:-8px;background:var(--g9);color:#fff;font:600 10px Inter;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
+.burger{display:none;width:24px;height:24px;color:var(--g9)}
+/* banner */
+.hero{position:relative;height:640px;overflow:hidden;background:var(--g9);color:#fff}
+.bgv{display:none;position:absolute;inset:0}
+.bgv video,.bgv .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hcols{position:absolute;top:0;bottom:0;right:0;width:60%;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--g9)}
+.hcols div{position:relative;overflow:hidden}
+.hcols div:nth-child(2){transform:translateY(-34px)}.hcols div:nth-child(2) video{height:calc(100% + 68px)}
+.hcols video{width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--g9) 0%,var(--g9) 40%,rgba(51,27,0,.55) 52%,rgba(51,27,0,0) 70%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero .kick{color:var(--g2)}
+.hero h1{font:800 56px/1.02 Montserrat;letter-spacing:-.025em;text-transform:uppercase;max-width:620px}
+.hero h1 em{font-style:normal;color:var(--g2)}
+.hero p{font-size:18px;line-height:1.6;max-width:480px;margin-top:20px;color:#F1E8DF}
+.hero .cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.chips{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
+.chips span{font:600 11px Inter;letter-spacing:.12em;text-transform:uppercase;padding:8px 13px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
+/* beneficios */
+.bens{border-bottom:1px solid var(--ln)}
+.ben-g{display:grid;grid-template-columns:repeat(4,1fr)}
+.ben{display:flex;gap:14px;align-items:center;padding:28px 22px;border-right:1px solid var(--ln)}
+.ben:last-child{border-right:0}
+.ben svg{width:30px;height:30px;color:var(--g7);flex:none}
+.ben b{display:block;font:700 13px Montserrat;text-transform:uppercase;letter-spacing:.04em;color:var(--g9)}
+.ben span{font-size:13px;color:var(--mu)}
+/* categorías */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{position:relative;aspect-ratio:3/4.2;border-radius:6px;overflow:hidden;background:var(--g9);text-decoration:none;color:#fff;display:block}
+.cat video,.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(30,17,7,.8))}
+.cat div{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px}
+.cat i{display:block;width:28px;height:3px;background:var(--g2);margin-bottom:10px}
+.cat b{font:800 19px Montserrat;text-transform:uppercase;letter-spacing:-.01em}
+.cat span{display:block;font-size:13px;opacity:.85;margin-top:4px}
+.mas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.mas a{font:600 12px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--g9);text-decoration:none;border:1px solid var(--ln);background:var(--cr);padding:9px 14px;border-radius:999px}
+/* tarjetas con embudo (las que quedaron) */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--ln),0 10px 30px -22px rgba(58,29,11,.35);cursor:pointer}
-.card .ph{position:relative;aspect-ratio:1/1.1;background:var(--crema);overflow:hidden}
+.card{background:#fff;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--ln),0 10px 30px -22px rgba(51,27,0,.35);cursor:pointer;border:1px solid #F1EAE3}
+.card .ph{position:relative;aspect-ratio:1/1.1;background:var(--cr);overflow:hidden}
 .card .ph img{width:100%;height:100%;object-fit:cover}
 .tag{position:absolute;top:12px;left:12px;background:var(--rojo);color:#fff;font:700 10.5px Inter;letter-spacing:.06em;padding:6px 9px;border-radius:999px}
-.tag.c{background:#fff;color:var(--cafe)}
+.tag.c{background:#fff;color:var(--g9)}
 .card .in{padding:18px 18px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
 .card h3{font:500 15.5px/1.35 Inter;color:#3D342D;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:42px}
 .op{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mu);margin:2px 0 6px}
 .op .st{display:flex;gap:1px;color:#D9A21B}.op .st svg{width:13px;height:13px}
-.pr{font:700 21px Montserrat;color:var(--tinta);letter-spacing:-.01em}
-.pr small{font:600 12.5px Inter;color:var(--rojo);margin-left:6px;letter-spacing:0}
+.pr{font:700 21px Montserrat;color:var(--ink);letter-spacing:-.01em}
 .trf{font-size:13.5px;line-height:1.4;color:var(--verde-t);font-weight:500}
-.trf em{font-style:normal;font:700 11px Inter;color:#fff;background:var(--rojo);border-radius:999px;padding:2px 7px;margin-left:4px;vertical-align:1px}
 .trf b{font-weight:700}
+.trf em{font-style:normal;font:700 11px Inter;color:#fff;background:var(--rojo);border-radius:999px;padding:2px 7px;margin-left:4px;vertical-align:1px}
 .cuo{font-size:13.5px;color:var(--verde-t);margin-top:2px}
 .nota{margin-top:26px;font-size:12px;color:var(--mu);display:flex;gap:8px;align-items:center}
-.nota svg{width:15px;height:15px;stroke:var(--rojo);fill:none;stroke-width:2;flex:none}
-
-/* 6 · problema → solución con video */
-.ps{background:var(--crema)}
+.nota svg{width:15px;height:15px;color:var(--g5)}
+/* problema solución */
+.ps{background:var(--cr)}
 .ps-g{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-.pq{font:700 12px Montserrat;text-transform:uppercase;letter-spacing:.08em;color:var(--rojo);display:flex;gap:10px;align-items:center;margin-bottom:14px}
-.pq:before{content:"";width:22px;height:2px;background:var(--rojo)}
 .ps-l{list-style:none;margin:28px 0 32px;display:grid;gap:16px}
 .ps-l li{display:flex;gap:14px;font-size:15px;line-height:1.5}
-.ps-l i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--cafe);color:#fff;display:grid;place-items:center}
-.ps-l i svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:3}
-.ps-l b{font-weight:600}.ps-l span{color:var(--mu)}
-.vid{position:relative;width:100%;max-width:360px;justify-self:center;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 60px -25px rgba(58,29,11,.55)}
+.ps-l i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--g9);color:#fff;display:grid;place-items:center}
+.ps-l i svg{width:14px;height:14px}
+.ps-l b{font-weight:600}
+.ps-l span{color:var(--mu)}
+.pq{font:700 13px Montserrat;text-transform:uppercase;letter-spacing:.06em;color:#A0453A;display:flex;gap:10px;align-items:center;margin-bottom:14px}
+.pq:before{content:"";width:22px;height:2px;background:#A0453A}
+.vid{position:relative;width:100%;max-width:360px;justify-self:center;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 30px 60px -25px rgba(51,27,0,.55)}
 .vid video{width:100%;height:100%;object-fit:cover}
-.vid .ig{position:absolute;left:14px;top:14px;z-index:2;display:flex;align-items:center;gap:8px;color:#fff;font:600 12px Inter;text-shadow:0 1px 4px rgba(0,0,0,.6)}
-.vid .ig img{width:30px;height:30px;border-radius:50%;background:#fff;object-fit:contain;padding:3px}
-
-/* 7 · testimonios + botón para sumar */
-.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.mt{display:flex;gap:18px;width:max-content;animation:mq 46s linear infinite}
-.tc{width:330px;flex:none;border:1px solid var(--ln);border-radius:18px;padding:24px;background:#fff;display:flex;flex-direction:column}
-.tc .st{display:flex;gap:2px;color:#D9A21B}.tc .st svg{width:16px;height:16px}
-.tc p{margin-top:14px;font-size:14.5px;line-height:1.6;color:#4D4239;flex:1}
-.tc .who{display:flex;gap:12px;align-items:center;margin-top:18px;font:600 13.5px Inter}
-.tc .who img,.tc .who i{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--arena);flex:none;display:grid;place-items:center;font:700 15px Montserrat;color:var(--cafe);font-style:normal}
-.tc small{display:block;font:400 11.5px Inter;color:var(--mu)}
-.tc .ok{display:inline-flex;align-items:center;gap:5px;font:600 11px Inter;color:var(--verde-t);margin-top:3px}
-.tc .ok svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:3}
-.tc.nuevo{border-color:var(--rojo);box-shadow:0 0 0 3px rgba(224,75,58,.12)}
-.t-cta{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px;flex-wrap:wrap}
+.snd{position:absolute;right:12px;bottom:12px;z-index:2;display:flex;align-items:center;gap:7px;background:rgba(0,0,0,.6);color:#fff;border:0;border-radius:999px;padding:8px 13px;font:600 12px Inter;cursor:pointer;backdrop-filter:blur(6px)}
+.snd svg{width:16px;height:16px}
+.ig{position:absolute;left:12px;top:12px;z-index:2;display:flex;align-items:center;gap:8px;color:#fff;font:600 12px Inter;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.ig img{width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:#fff;object-fit:contain;padding:2px}
+/* testimonios */
+.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mt{display:flex;gap:18px;width:max-content;animation:mq 40s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.tc{width:340px;flex:none;border:1px solid var(--ln);border-radius:8px;padding:24px;background:#fff}
+.st{display:flex;gap:2px;color:#C8961E}.st svg{width:16px;height:16px}
+.tc p{margin-top:14px;font-size:14px;line-height:1.6;color:var(--mu)}
+.tc .who{display:flex;gap:10px;align-items:center;margin-top:18px;font:600 13px Inter}
+.tc .who i{width:34px;height:34px;border-radius:50%;background:var(--g2);display:grid;place-items:center;font:700 14px Montserrat;color:var(--g9);font-style:normal;flex:none}
+.tc small{display:block;font:400 11px Inter;color:var(--mu)}
+.tc.nuevo{border-color:var(--g7);box-shadow:0 0 0 3px rgba(107,74,47,.15)}
+.t-cta{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:28px;flex-wrap:wrap}
 .t-cta p{font-size:14px;color:var(--mu)}
-/* modal testimonio */
-.md{position:absolute;inset:0;z-index:80;background:rgba(24,12,4,.5);display:none;align-items:center;justify-content:center;padding:18px}
-.md.on{display:flex}
-.md-b{background:#fff;border-radius:22px;width:100%;max-width:440px;padding:28px;position:relative;max-height:100%;overflow:auto}
-.md-b h4{font:700 22px Montserrat;color:var(--cafe)}
-.md-b>p{font-size:14px;color:var(--mu);margin:6px 0 18px;line-height:1.5}
-.md-x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--crema);display:grid;place-items:center}
-.md-x svg{width:16px;height:16px;stroke:var(--cafe);fill:none;stroke-width:2}
-.fld{display:block;margin-bottom:14px}
-.fld span{display:block;font:600 12px Inter;color:var(--cafe);margin-bottom:6px}
-.fld input,.fld textarea{width:100%;border:1px solid var(--ln);border-radius:12px;padding:12px 14px;font:400 16px Inter;color:var(--tinta);background:var(--hueso)}
-.fld textarea{min-height:96px;resize:vertical}
-.fld input:focus,.fld textarea:focus{outline:2px solid var(--cafe);outline-offset:1px}
-.stars-in{display:flex;gap:6px}
-.stars-in button{color:#D9A21B}.stars-in svg{width:28px;height:28px}
-.stars-in button.off{color:#E3D9CC}
-.md .btn{width:100%;margin-top:6px}
-.gracias{display:none;text-align:center;padding:10px 0}
-.gracias i{width:58px;height:58px;border-radius:50%;background:var(--verde-f);display:grid;place-items:center;margin:0 auto 14px;color:var(--verde-t)}
-.gracias i svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2.5}
-
-/* 8 · por qué elegirnos */
-.why{background:var(--cafe);color:#fff}
-.why .kick{color:#E8D6C3}.why .h2{color:#fff}.why .h2 em{color:#F2B4A9}.why .sub{color:#D9C8B6}
-.why-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-.why-ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5}
-.why-ph img{width:100%;height:100%;object-fit:cover}
-.why-l{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
-.wi{border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:22px}
-.wi svg{width:26px;height:26px;stroke:#F2B4A9;fill:none;stroke-width:1.6}
-.wi b{display:block;font:700 15px Montserrat;margin-top:12px}
-.wi p{font-size:13.5px;line-height:1.55;color:#D9C8B6;margin-top:6px}
-/* 9 · faq */
+/* por qué elegirnos */
+.why{background:var(--g9);color:#fff}
+.why .kick{color:var(--g2)}.why .h2{color:#fff}.why .h2 em{background:var(--g2);color:var(--g9)}
+.why .sub{color:#D8C8B8}
+.why-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.why-l{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.wi{border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px}
+.wi svg{width:28px;height:28px;color:var(--g2)}
+.wi b{display:block;font:700 15px Montserrat;text-transform:uppercase;margin-top:14px;letter-spacing:.01em}
+.wi p{font-size:13.5px;line-height:1.55;color:#D8C8B8;margin-top:6px}
+.why .vid{box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+/* Noam en movimiento (estilo Dámelo / Cry): avanza solo y cambia de lado con el scroll */
+.mov{background:var(--cr);padding:70px 0 76px;overflow:hidden}
+.mov .head{margin-bottom:28px}
+.mov-t{display:flex;gap:12px;width:max-content;will-change:transform}
+.reel{flex:none;width:230px;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:var(--g9);position:relative}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel:after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(0deg,rgba(0,0,0,.4),transparent)}
+/* faq */
 .faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
 .fq{border-bottom:1px solid var(--ln)}
-.fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font:600 16px Inter;color:var(--cafe)}
+.fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font:600 16px Inter;color:var(--g9)}
 .fq summary::-webkit-details-marker{display:none}
-.fq summary svg{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .3s}
+.fq summary svg{width:20px;height:20px;flex:none;transition:transform .3s}
 .fq[open] summary svg{transform:rotate(45deg)}
 .fq p{padding:0 40px 22px 0;font-size:15px;line-height:1.65;color:var(--mu)}
-/* 10 · cta */
-.cta-b{position:relative;border-radius:24px;overflow:hidden;color:#fff;padding:80px 60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;background:#2a1508}
-.cta-b>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
-.cta-b>*:not(img){position:relative}
-.cta-b .h2{color:#fff;font-size:38px}.cta-b .kick{color:#F3E9DD}.cta-b .sub{color:#EADBCB}
+/* cta */
+.cta-b{position:relative;border-radius:10px;overflow:hidden;background:var(--g7);color:#fff;padding:70px 60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.cta-b .h2{font-size:38px;color:#fff}
+.cta-b .kick{color:var(--g2)}
+.cta-b .sub{color:#EADCCE}
 .cta-b .btns{display:flex;flex-direction:column;gap:12px}
-/* 11 · contacto */
-.map{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ln);border-radius:22px;overflow:hidden;background:#fff}
+.cta-b .mark{position:absolute;right:-30px;top:-20px;width:300px;opacity:.1}
+/* envíos */
+.map{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ln);border-radius:10px;overflow:hidden}
 .map-i{padding:50px}
 .mr{display:flex;gap:14px;margin-top:20px;font-size:15px;line-height:1.5}
-.mr svg{width:22px;height:22px;stroke:var(--cafe);fill:none;stroke-width:1.8;flex:none;margin-top:2px}
-.mr b{display:block;font-weight:600}.mr span{color:var(--mu)}
+.mr svg{width:22px;height:22px;color:var(--g7);flex:none;margin-top:2px}
+.mr b{display:block;font-weight:600}
+.mr span{color:var(--mu)}
 .map-i .btn{margin-top:30px}
 .map-p{position:relative;min-height:380px}
 .map-p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* pie */
-.foot{background:var(--cafe);color:#E3D3C2;margin-top:84px;padding:64px 0 28px}
+.foot{background:var(--g9);color:#D8C8B8;margin-top:84px;padding:64px 0 28px}
 .fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-.foot .flogo{width:130px}
+.foot .flogo{height:46px;width:auto}
 .foot p{font-size:14px;line-height:1.65;margin-top:18px;max-width:300px}
 .foot h4{font:700 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
 .foot ul{list-style:none;display:grid;gap:10px;font-size:14px}
 .pay{display:flex;gap:8px;flex-wrap:wrap}
-.pay span{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:6px 10px;font:600 11px Inter;color:#F3E9DD}
-.fb{border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;font-size:12px;color:#BFA996}
-.wa{position:sticky;bottom:18px;margin:-74px 18px 18px auto;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 25px -8px rgba(0,0,0,.4);z-index:30}
-.wa svg{width:28px;height:28px;fill:#fff}
-
-/* ---------- ficha de producto (embudo estilo Bertolina, en pastel con detalles rojos) ---------- */
-.fx{position:absolute;inset:0;z-index:70;background:var(--hueso);overflow-y:auto;display:none;container-type:inline-size}
+.pay span{border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:6px 10px;font:600 11px Inter;color:#F1E8DF}
+.fb{border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;font-size:12px;color:#B39D88}
+.wa{position:sticky;bottom:18px;margin:-70px 18px 18px auto;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 25px -8px rgba(0,0,0,.4);z-index:6}
+.wa svg{width:28px;height:28px;color:#fff}
+/* ---------- ficha (embudo en recuadros pastel, detalles rojos) ---------- */
+.fx{position:absolute;inset:0;z-index:70;background:#fff;overflow-y:auto;display:none;container-type:inline-size}
 .fx.on{display:block}
 .fx-top{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--ln);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:62px}
 .fx-top img{height:34px}
-.fx-top button{display:flex;align-items:center;gap:8px;font:600 13px Inter;color:var(--cafe)}
+.fx-top button{display:flex;align-items:center;gap:8px;font:600 13px Inter;color:var(--g9)}
 .fx-top button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 .fx-g{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;max-width:1180px;margin:0 auto;padding:36px 40px 80px}
 .fx-gal{display:grid;grid-template-columns:76px 1fr;gap:12px;align-self:start;position:sticky;top:90px}
 .fx-th{display:grid;gap:10px;align-content:start}
-.fx-th img{width:76px;aspect-ratio:2/3;object-fit:cover;border-radius:10px;opacity:.6;cursor:pointer;border:1.5px solid transparent}
-.fx-th img.on{opacity:1;border-color:var(--cafe)}
-.fx-main{border-radius:18px;overflow:hidden;background:var(--crema);aspect-ratio:2/2.6}
+.fx-th img{width:76px;aspect-ratio:2/3;object-fit:cover;border-radius:8px;opacity:.6;cursor:pointer;border:1.5px solid transparent}
+.fx-th img.on{opacity:1;border-color:var(--g9)}
+.fx-main{border-radius:12px;overflow:hidden;background:var(--cr);aspect-ratio:2/2.6}
 .fx-main img{width:100%;height:100%;object-fit:cover}
 .miga{font-size:12px;color:var(--mu)}
-.fx h1{font:700 30px/1.15 Montserrat;color:var(--cafe);margin:10px 0 8px;letter-spacing:-.02em}
-.fx .vend{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mu)}
-.fx .vend .st{display:flex;gap:1px;color:#D9A21B}.fx .vend .st svg{width:14px;height:14px}
+.fx h1{font:700 28px/1.15 Montserrat;color:var(--g9);margin:10px 0 8px;letter-spacing:-.02em}
+.vend{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mu)}
+.vend .st svg{width:14px;height:14px}
 .fx-pr{margin-top:18px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.fx-pr b{font:500 36px Montserrat;color:var(--tinta);letter-spacing:-.02em}
-.fx-pr s{font-size:15px;color:#A39486}
+.fx-pr b{font:500 36px Montserrat;color:var(--ink);letter-spacing:-.02em}
 .fx-pr em{font:600 15px Inter;color:var(--rojo);font-style:normal}
 .fx-imp{font-size:12px;color:#9C8E82;margin-top:4px}
-.box{border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:14px;margin-top:12px;border:1.5px solid}
+.box{border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:14px;margin-top:12px;border:1.5px solid}
 .box .ic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none;background:#fff}
 .box .ic svg{width:22px;height:22px;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .box small{display:block;font:500 11.5px Inter;letter-spacing:.06em;text-transform:uppercase;color:#6B5E54}
 .box small i{font-style:normal;color:var(--rojo);font-weight:700}
 .box b{display:block;font:700 23px Montserrat;letter-spacing:-.01em;margin-top:1px}
-.box.trf2{background:var(--verde-f);border-color:var(--verde-b)}.box.trf2 .ic svg{stroke:var(--verde-t)}.box.trf2 b{color:var(--verde-t)}
-.box.cuo2{background:var(--celeste-f);border-color:var(--celeste-b);flex-wrap:wrap}.box.cuo2 .ic svg{stroke:var(--celeste-t)}.box.cuo2 b{color:var(--celeste-t)}
+.box.t2{background:var(--verde-f);border-color:var(--verde-b)}.box.t2 .ic svg{stroke:var(--verde-t)}.box.t2 b{color:var(--verde-t)}
+.box.c2{background:var(--celeste-f);border-color:var(--celeste-b);flex-wrap:wrap}.box.c2 .ic svg{stroke:var(--celeste-t)}.box.c2 b{color:var(--celeste-t)}
 .tarj{width:100%;border-top:1px solid var(--celeste-b);padding-top:10px;display:flex;gap:8px;flex-wrap:wrap}
 .tarj span{font:700 9.5px Inter;letter-spacing:.04em;color:#5C7088;background:#fff;border:1px solid var(--celeste-b);border-radius:4px;padding:3px 7px}
-.fx-desc{font-size:14px;margin-top:12px}.fx-desc i{font-style:normal;color:var(--rojo);font-weight:600}
+.ahorro{font-size:14px;margin-top:12px}.ahorro i{font-style:normal;color:var(--rojo);font-weight:600}
 .envio{display:flex;gap:12px;align-items:center;margin-top:18px;padding:14px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
 .envio svg{width:30px;height:30px;stroke:var(--rojo);fill:none;stroke-width:1.6;flex:none}
 .envio b{display:block;font:600 13px Inter;letter-spacing:.04em;text-transform:uppercase;color:var(--rojo)}
 .envio span{font-size:12.5px;color:var(--mu)}
 .stock{display:flex;align-items:center;gap:8px;font:600 13.5px Inter;color:var(--rojo);margin-top:18px}
-.stock:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rojo);box-shadow:0 0 0 4px rgba(224,75,58,.18)}
+.stock:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rojo);box-shadow:0 0 0 4px rgba(217,71,58,.18)}
 .buy{display:grid;grid-template-columns:120px 1fr;gap:12px;margin-top:16px}
-.qty{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--ln);border-radius:999px;padding:0 16px;height:54px;background:#fff;font-weight:600}
+.qty{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--ln);border-radius:4px;padding:0 16px;height:54px;font-weight:600}
 .buy .btn{height:54px}
-.seg2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.seg2>div{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mu);line-height:1.4}
-.seg2 svg{width:20px;height:20px;stroke:var(--cafe);fill:none;stroke-width:1.7;flex:none}
-.seg2 b{display:block;color:var(--cafe);font-weight:600}
-.fx-tst{margin-top:28px;border-top:1px solid var(--ln);padding-top:24px}
-.fx-tst h4{font:700 16px Montserrat;color:var(--cafe);display:flex;justify-content:space-between;align-items:center}
-.fx-tst h4 a{font:600 12.5px Inter;color:var(--rojo);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.fx-tst .tc{width:auto;margin-top:12px;padding:18px}
-
+/* modal testimonio */
+.md{position:absolute;inset:0;z-index:80;background:rgba(30,17,7,.5);display:none;align-items:center;justify-content:center;padding:18px}
+.md.on{display:flex}
+.md-b{background:#fff;border-radius:16px;width:100%;max-width:440px;padding:28px;position:relative;max-height:100%;overflow:auto}
+.md-b h4{font:800 20px Montserrat;color:var(--g9);text-transform:uppercase}
+.md-b>form>p,.md-b .gr p{font-size:14px;color:var(--mu);margin:6px 0 18px;line-height:1.5}
+.md-x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--cr);display:grid;place-items:center}
+.md-x svg{width:16px;height:16px;stroke:var(--g9);fill:none;stroke-width:2}
+.fld{display:block;margin-bottom:14px}
+.fld span{display:block;font:600 12px Inter;color:var(--g9);margin-bottom:6px}
+.fld input,.fld textarea{width:100%;border:1px solid var(--ln);border-radius:8px;padding:12px 14px;font:400 16px Inter;color:var(--ink);background:#FCFAF8}
+.fld textarea{min-height:96px;resize:vertical}
+.si{display:flex;gap:6px}.si button{color:#D9A21B}.si svg{width:28px;height:28px}.si button.off{color:#E3D9CC}
+.md .btn{width:100%}
+.gr{display:none;text-align:center}
 /* aparición */
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}.mt,.bar-t{animation:none}}
-
-/* ---------- celular ---------- */
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}.mt,.ann-t{animation:none}}
+/* ---------- celular (por ancho del sitio) ---------- */
 @container (max-width:760px){
-  .wrap{padding:0 16px}
+  .wrap{padding:0 18px}
   .sec{padding:56px 0}
-  .h2{font-size:26px}.sub{font-size:15px}
-  .hd-nav{display:none}.burger{display:block}
-  .hd-in{height:70px;gap:10px}
-  .hd-logo{width:112px;height:44px}
-  .hd-ico{gap:14px}.hd-ico .opt{display:none}
-  .site.pasado .hd-in{height:56px}.site.pasado .hd-logo{width:86px;height:33px}
-  .v-pc{display:none}.v-cel{display:block}
-  .hero-in{bottom:70px}
-  .hero h1{font-size:38px}
-  .hero p{font-size:15px;margin-bottom:20px}
-  .hero .cta .btn{flex:1;padding:0 12px;height:48px}
-  .bens{padding:44px 0}
-  .ben-w{grid-template-columns:1fr;gap:22px}
-  .ben-g{gap:10px}
-  .ben{padding:18px 14px;border-radius:16px;gap:10px}
-  .ben i{width:42px;height:42px}.ben i svg{width:20px;height:20px}
-  .ben b{font-size:14px}.ben span{font-size:12px}
-  .ben em{top:14px;right:12px;font-size:8.5px}
-  .cats{grid-auto-columns:calc((100% - 16px)/3);gap:8px}
-  .cat{border-radius:12px;aspect-ratio:3/4.4}
-  .cat>div{padding:10px}.cat b{font-size:13px}.cat span{display:none}.cat u{display:none}
-  .flechas{display:none}
+  .h2{font-size:25px}
+  .sub{font-size:15px}
+  .hdr .wrap{height:64px;gap:12px}
+  .burger{display:block}
+  .logo{margin:0 auto}.logo img{height:38px}
+  .nav{display:none}.ico{margin-left:0;gap:12px}.ico .opt{display:none}
+  .hero{height:600px}
+  .hcols{display:none}.bgv{display:block}
+  .hero:after{background:linear-gradient(180deg,rgba(30,17,7,.1) 20%,rgba(30,17,7,.9) 75%)}
+  .hero .wrap{justify-content:flex-end;padding-bottom:40px}
+  .hero h1{font-size:32px}
+  .hero p{font-size:15px;margin-top:14px}
+  .hero .cta{margin-top:22px}.hero .cta .btn{flex:1;padding:0 12px}
+  .chips{display:none}
+  .ben-g{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .ben-g::-webkit-scrollbar{display:none}
+  .ben{min-width:78%;scroll-snap-align:start;padding:20px 18px}
+  .cats{grid-template-columns:1fr 1fr;gap:10px}
+  .cat b{font-size:15px}.cat div{padding:14px}
+  .mas a{font-size:11px;padding:8px 12px}
   .grid{grid-template-columns:1fr 1fr;gap:12px}
-  .card{border-radius:16px}
-  .card .in{padding:12px 12px 14px}
+  .card{border-radius:16px}.card .in{padding:12px 12px 14px}
   .card h3{font-size:13.5px;min-height:36px}
-  .pr{font-size:17px}.pr small{display:block;margin:0;font-size:11.5px}
-  .trf{font-size:12.5px}.trf em{font-size:10px;padding:1px 6px}.cuo{font-size:12px}.op{font-size:11px}
+  .pr{font-size:17px}.trf{font-size:12.5px}.trf em{font-size:10px;padding:1px 6px}.cuo{font-size:12px}.op{font-size:11px}
   .head .link{display:none}
   .ps-g,.why-g,.faq-g{grid-template-columns:1fr;gap:36px}
-  .vid{max-width:290px}
+  .vid{max-width:300px}
   .why-l{grid-template-columns:1fr}
+  .reel{width:150px}
   .tc{width:280px}
-  .cta-b{grid-template-columns:1fr;padding:44px 24px}.cta-b .h2{font-size:26px}
+  .cta-b{grid-template-columns:1fr;padding:40px 24px}.cta-b .h2{font-size:26px}
   .map{grid-template-columns:1fr}.map-i{padding:28px 22px}.map-p{min-height:230px;order:-1}
   .fg{grid-template-columns:1fr 1fr;gap:32px}.fg>div:first-child{grid-column:1/-1}
   .fb{flex-direction:column;gap:6px}
@@ -346,15 +310,14 @@ main{position:relative;z-index:1;background:var(--hueso)}
   .fx-g{grid-template-columns:1fr;gap:22px;padding:16px 16px 60px}
   .fx-gal{position:static;grid-template-columns:1fr}
   .fx-th{grid-auto-flow:column;grid-auto-columns:60px;order:2}.fx-th img{width:60px}
-  .fx h1{font-size:23px}.fx-pr b{font-size:30px}.box b{font-size:20px}
-  .seg2{grid-template-columns:1fr}
+  .fx h1{font-size:22px}.fx-pr b{font-size:30px}.box b{font-size:20px}
 }
 </style>
 </head>
 <body>
 <div class="tool">
   <b>PRAXIS<span>Noam · vista previa de tu web</span></b>
-  <div class="est"><i></i>Estructura 1 · encabezado con video</div>
+  <div class="est"><i></i>Estructura 1</div>
   <div class="seg">
     <button data-m="pc" class="on"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>PC</button>
     <button data-m="mob"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>Celular</button>
@@ -365,149 +328,169 @@ main{position:relative;z-index:1;background:var(--hueso)}
 <div class="device" id="device">
  <div class="chrome"><i></i><i></i><i></i><div class="url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>noam.com.ar</div></div>
  <div class="screen" id="screen">
- <div class="site" id="site">
+ <div class="site">
 
-  <!-- 1 · Barra de anuncios + encabezado -->
-  <div class="top">
-    <div class="bar" aria-label="Anuncios"><div class="bar-t" id="bar"></div></div>
-    <header class="hd"><div class="wrap hd-in">
-      <nav class="hd-nav"><a href="#cats">Productos</a><a href="#ofertas">Promociones</a><a href="#cats">Categorías</a></nav>
-      <button class="burger" aria-label="Menú"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
-      <a class="hd-logo" href="#top" aria-label="Noam, inicio"><img class="ll" src="m/logo-light.png" alt="Noam home &amp; deco"><img class="ld" src="m/logo-dark.png" alt=""></a>
-      <div class="hd-ico">
-        <a href="#" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
-        <a class="opt" href="#" aria-label="Mi cuenta"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></a>
-        <a class="cart" href="#" aria-label="Carrito"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b>0</b></a>
-      </div>
-    </div></header>
-  </div>
+  <!-- 1 · Barra de anuncios -->
+  <div class="ann"><div class="ann-t">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>30% OFF pagando con transferencia</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19"/></svg>2, 3 y 6 cuotas sin interés</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Envíos a todo el país</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>30% OFF pagando con transferencia</div>
+  </div></div>
 
-  <!-- 2 · Banner con video -->
+  <!-- 2 · Encabezado -->
+  <header class="hdr"><div class="wrap">
+    <svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <a class="logo" href="#top"><img src="m/logo-dark.png" alt="Noam home &amp; deco"></a>
+    <nav class="nav"><a href="#cats">Mesas</a><a href="#cats">Puff</a><a href="#cats">Sillas</a><a href="#cats">Espejos</a><a href="#cats">Deco</a><a href="#ofertas">Promociones</a></nav>
+    <div class="ico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg class="opt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      <span class="cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b>2</b></span>
+    </div>
+  </div></header>
+
+  <!-- 3 · Banner con video -->
   <section class="hero" id="top">
-    <img class="poster v-pc" src="m/hero-pc.jpg" alt=""><img class="poster v-cel" src="m/hero-cel.jpg" alt="">
-    <video class="v-pc" src="m/hero-pc.mp4" poster="m/hero-pc.jpg" autoplay muted loop playsinline></video>
-    <video class="v-cel" src="m/hero-cel.mp4" poster="m/hero-cel.jpg" autoplay muted loop playsinline></video>
-    <div class="wrap hero-in">
-      <div class="kick">Noam · Home &amp; Deco</div>
-      <h1>Espacios que cuentan quién sos.</h1>
-      <p>Puffs, mesas, espejos y sillones de diseño para que tu casa se sienta tuya. Piezas únicas, listas para llegar a tu living.</p>
-      <div class="cta"><a class="btn w" href="#prods">Ver productos</a><a class="btn o" href="#ofertas">Ver promociones</a></div>
+    <div class="bgv"><img class="poster" src="m/hero.jpg" alt=""><video class="av" src="m/hero.mp4" poster="m/hero.jpg" muted loop playsinline preload="metadata"></video></div>
+    <div class="hcols">
+      <div><video class="av" src="m/hero.mp4" poster="m/hero.jpg" muted loop playsinline preload="metadata"></video></div>
+      <div><video class="av" src="m/h-esp.mp4" poster="m/h-esp.jpg" muted loop playsinline preload="metadata"></video></div>
+      <div><video class="av" src="m/h-sil.mp4" poster="m/h-sil.jpg" muted loop playsinline preload="metadata"></video></div>
+    </div>
+    <div class="wrap">
+      <div class="kick rv">Noam · Home &amp; Deco</div>
+      <h1 class="rv" style="--i:1">¿Un rincón vacío? <em>Llenalo</em> de diseño.</h1>
+      <p class="rv" style="--i:2">Mesas, puffs, espejos, sillas y deco de alta calidad, con diseño hermoso y buenos precios. Cambiá tu casa por completo con pocos detalles.</p>
+      <div class="cta rv" style="--i:3"><a class="btn w" href="#prods">Ver productos</a><a class="btn o" href="#ofertas">Ver promociones</a></div>
+      <div class="chips rv" style="--i:4"><span>Trabajamos con stock</span><span>Envíos a todo el país</span><span>30% OFF transfiriendo</span></div>
     </div>
   </section>
 
-  <main>
-  <!-- 3 · Beneficios 2 × 2 -->
-  <section class="bens"><div class="wrap ben-w">
-    <div class="rv"><div class="kick">Comprá tranquilo</div><div class="h2">Diseño para tu casa, <em>sin vueltas</em></div><p class="sub">Todo lo que necesitás saber antes de elegir tu próxima pieza.</p></div>
-    <div class="ben-g">
-      <div class="ben rv"><em>Mejor precio</em><i><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01"/></svg></i><div><b>30% OFF con transferencia</b><span>El mejor precio de la tienda, en todos los productos.</span></div></div>
-      <div class="ben rv" style="--i:1"><i><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></i><div><b>Hasta 6 cuotas sin interés</b><span>Pagá en 2, 3 o 6 cuotas con tu tarjeta.</span></div></div>
-      <div class="ben rv" style="--i:2"><i><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></i><div><b>Envíos a domicilio</b><span>Te llevamos tu pedido cuidado y bien embalado.</span></div></div>
-      <div class="ben rv" style="--i:3"><i><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></i><div><b>Compra protegida</b><span>Tus datos y tu pago, cuidados en toda la compra.</span></div></div>
+  <!-- 4 · Beneficios -->
+  <section class="bens"><div class="wrap"><div class="ben-g">
+    <div class="ben rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01"/></svg><div><b>30% OFF</b><span>Pagando con transferencia</span></div></div>
+    <div class="ben rv" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg><div><b>Cuotas sin interés</b><span>En 2, 3 y 6 cuotas</span></div></div>
+    <div class="ben rv" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envíos al país</b><span>Te llega a tu casa</span></div></div>
+    <div class="ben rv" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><div><b>Con stock</b><span>Despacho sin esperas</span></div></div>
+  </div></div></section>
+
+  <!-- 5 · Categorías con video -->
+  <section class="sec" id="cats"><div class="wrap">
+    <div class="head rv"><div><div class="kick">Categorías</div><div class="h2">¿Qué le falta a <em>tu casa</em>?</div></div><a class="link" href="#prods">Ver todo</a></div>
+    <div class="cats">
+      <a class="cat rv" href="#prods"><video class="av" src="m/c-esp.mp4" poster="m/c-esp.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Espejos</b><span>De pared y con pie</span></div></a>
+      <a class="cat rv" style="--i:1" href="#prods"><video class="av" src="m/c-sil.mp4" poster="m/c-sil.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Sillas</b><span>Bouclé y tapizadas</span></div></a>
+      <a class="cat rv" style="--i:2" href="#prods"><video class="av" src="m/c-puf.mp4" poster="m/c-puf.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Puff y baúles</b><span>Con guardado</span></div></a>
+      <a class="cat rv" style="--i:3" href="#prods"><video class="av" src="m/c-deco.mp4" poster="m/c-deco.jpg" muted loop playsinline preload="none"></video><div><i></i><b>Deco</b><span>Mármol, vasos y jarras</span></div></a>
     </div>
+    <div class="mas rv"><a href="#prods">Mesas</a><a href="#prods">Sillones</a><a href="#prods">Pie de cama</a><a href="#prods">Iluminación</a><a href="#prods">Relojes</a><a href="#prods">Sets de baño</a></div>
   </div></section>
 
-  <!-- 4 · Categorías de a 3, scrolleables -->
-  <section class="sec" id="cats" style="padding-top:20px"><div class="wrap">
-    <div class="head rv"><div><div class="kick">Categorías</div><div class="h2">Elegí por <em>ambiente</em></div></div><div class="flechas"><button aria-label="Anterior" data-d="-1"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><button aria-label="Siguiente" data-d="1"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div></div>
-    <div class="cats rv" id="cl"></div>
-    <div class="puntos" id="pt"></div>
-  </div></section>
-
-  <!-- 5 · Destacados con embudo -->
-  <section class="sec" id="prods" style="padding-top:10px"><div class="wrap">
+  <!-- 6 · Productos destacados -->
+  <section class="sec" id="prods" style="padding-top:0"><div class="wrap">
     <div class="head rv"><div><div class="kick">Destacados</div><div class="h2">Los más <em>elegidos</em></div></div><a class="link" href="#prods">Ver todos</a></div>
     <div class="grid" id="g1"></div>
-    <div class="nota"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Precios redondos, sin los «,00» ni los centavos: precio, transferencia y cuotas salen de tu Tiendanube y se muestran limpios.</div>
+    <div class="nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Tus precios reales, sin «,00» ni centavos: precio, transferencia y cuotas salen de tu Tiendanube.</div>
   </div></section>
 
-  <!-- 6 · Problema → solución con video -->
+  <!-- 7 · Problema → solución con video -->
   <section class="sec ps" id="ps"><div class="wrap ps-g">
     <div class="rv">
       <div class="pq">El problema</div>
-      <div class="h2">Tu casa tiene que <em>contarte a vos</em>, no a un catálogo.</div>
-      <p class="sub">Muebles que se ven todos iguales, que no combinan con nada o que no aguantan el uso diario. En Noam elegimos cada pieza para que sea linda, cómoda y útil.</p>
+      <div class="h2">¿Por qué decorar una casa tiene que ser <em>tan caro</em>?</div>
+      <p class="sub">Entrás a un negocio de decoración, te querés llevar todo y con el precio no podés. Por eso nació Noam: productos de alta calidad, con diseño hermoso y a buen precio.</p>
       <ul class="ps-l">
-        <li><i><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Texturas que abrigan</b> <span>— bouclé, teddy, mármol y madera.</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Diseño con función</b> <span>— puffs con guardado, mesas y recibidores.</span></div></li>
-        <li><i><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Piezas que combinan</b> <span>— una paleta neutra que suma en cualquier ambiente.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Alta calidad</b> <span>— bouclé, teddy, mármol, travertino y madera.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Buenos precios</b> <span>— y 30% OFF pagando con transferencia.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><div><b>Pocos detalles, otra casa</b> <span>— un espejo, una mesa o un puff alcanzan.</span></div></li>
       </ul>
-      <a class="btn" href="#prods">Encontrá tu pieza</a>
+      <a class="btn" href="#prods">Empezá por un detalle</a>
     </div>
     <div class="vid rv" style="--i:2">
-      <div class="ig"><img src="m/logo-dark.png" alt="">noam_homedeco</div>
-      <video class="av" src="m/hero-cel.mp4" poster="m/hero-cel.jpg" muted loop playsinline preload="none"></video>
+      <div class="ig"><img src="m/logo-dark.png" alt="">noam.homeandeco</div>
+      <video class="av snd-v" src="m/ps.mp4" poster="m/ps.jpg" muted loop playsinline preload="none"></video>
+      <button class="snd" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/></svg><span>Activar sonido</span></button>
     </div>
   </div></section>
 
-  <!-- 7 · Testimonios + sumar el tuyo -->
+  <!-- 8 · Testimonios -->
   <section class="sec" id="tst">
     <div class="wrap"><div class="head rv" style="justify-content:center;text-align:center"><div><div class="kick">Opiniones</div><div class="h2">Lo que dicen <em>nuestros clientes</em></div></div></div></div>
     <div class="marq rv"><div class="mt" id="mt"></div></div>
     <div class="wrap t-cta rv"><p>¿Ya tenés tu pieza Noam?</p><button class="btn l" id="abrir-t" type="button">Quiero dejar mi testimonio</button></div>
   </section>
 
-  <!-- 8 · Ofertas -->
+  <!-- 9 · Ofertas -->
   <section class="sec" id="ofertas" style="padding-top:20px"><div class="wrap">
     <div class="head rv"><div><div class="kick">Promociones</div><div class="h2">Ofertas <em>de la semana</em></div></div><a class="link" href="#ofertas">Ver todas</a></div>
     <div class="grid" id="g2"></div>
   </div></section>
 
-  <!-- 9 · Por qué elegirnos -->
+  <!-- 10 · Por qué elegirnos -->
   <section class="sec why" id="why"><div class="wrap why-g">
-    <div class="why-ph rv"><img src="m/p33.jpg" alt="Living con piezas Noam" loading="lazy"></div>
+    <div class="vid rv">
+      <div class="ig"><img src="m/logo-dark.png" alt="">Armando un pedido</div>
+      <video class="av snd-v" src="m/why.mp4" poster="m/why.jpg" muted loop playsinline preload="none"></video>
+      <button class="snd" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/></svg><span>Activar sonido</span></button>
+    </div>
     <div>
-      <div class="rv"><div class="kick">Por qué elegirnos</div><div class="h2">Piezas que <em>se eligen</em> una vez.</div><p class="sub">Cada producto Noam está pensado para durar y para que tu casa se vea como la imaginaste.</p></div>
+      <div class="rv"><div class="kick">Por qué elegirnos</div><div class="h2">Trabajamos <em>con stock</em>.</div><p class="sub">Lo que ves en la web está en nuestro depósito, listo para salir. Armamos cada pedido con cuidado y te lo mandamos a cualquier punto del país.</p></div>
       <div class="why-l">
-        <div class="wi rv"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/></svg><b>Materiales nobles</b><p>Bouclé, teddy, mármol, travertino y madera.</p></div>
-        <div class="wi rv" style="--i:1"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M10 21v-6h4v6"/></svg><b>Diseño para tu casa</b><p>Una línea neutra que combina en living, dormitorio y recibidor.</p></div>
-        <div class="wi rv" style="--i:2"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg><b>30% OFF transfiriendo</b><p>O hasta 6 cuotas sin interés con tarjeta.</p></div>
-        <div class="wi rv" style="--i:3"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg><b>Te asesoramos</b><p>Escribinos por WhatsApp y te ayudamos a elegir.</p></div>
+        <div class="wi rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><b>Stock propio</b><p>Sin esperas de fabricación: tu pedido sale del depósito.</p></div>
+        <div class="wi rv" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>Envíos a todo el país</b><p>Embalado con cuidado, hasta la puerta de tu casa.</p></div>
+        <div class="wi rv" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6L12 16.3 6.6 19.2l1.3-6-4.5-4 6-.6z"/></svg><b>Diseño que combina</b><p>Una línea pensada para armar toda tu casa.</p></div>
+        <div class="wi rv" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg><b>Buenos precios</b><p>30% OFF transfiriendo o en cuotas sin interés.</p></div>
       </div>
     </div>
   </div></section>
 
-  <!-- 10 · Preguntas frecuentes -->
+  <!-- 11 · Noam en movimiento -->
+  <section class="mov" id="mov-s">
+    <div class="wrap head rv"><div><div class="kick">@noam.homeandeco</div><div class="h2">Noam <em>en movimiento</em></div></div><a class="link" href="#mov-s">Ver en Instagram</a></div>
+    <div class="mov-t" id="mov"></div>
+  </section>
+
+  <!-- 12 · Preguntas frecuentes -->
   <section class="sec" id="faq"><div class="wrap faq-g">
     <div class="rv"><div class="kick">Ayuda</div><div class="h2">Preguntas <em>frecuentes</em></div><p class="sub">Si te queda alguna duda, escribinos por WhatsApp y te respondemos.</p></div>
     <div class="rv" style="--i:1" id="fq"></div>
   </div></section>
 
-  <!-- 11 · Llamado a la acción -->
+  <!-- 13 · Llamado a la acción -->
   <section class="sec" style="padding-top:0"><div class="wrap">
-    <div class="cta-b rv"><img src="m/p35.jpg" alt="">
-      <div><div class="kick">Noam Home &amp; Deco</div><div class="h2">Tu casa, como la imaginaste.</div><p class="sub">Elegí tu pieza online con 30% OFF por transferencia o consultanos por WhatsApp.</p></div>
+    <div class="cta-b rv">
+      <img class="mark" src="m/logo-light.png" alt="">
+      <div><div class="kick">Elegí Noam</div><div class="h2">Cambiá tu casa con pocos detalles.</div><p class="sub">Hacé tu pedido online con 30% OFF por transferencia o consultanos por WhatsApp.</p></div>
       <div class="btns"><a class="btn w" href="#prods">Comprar ahora</a><a class="btn o" href="#top">Consultar por WhatsApp</a></div>
     </div>
   </div></section>
 
-  <!-- 12 · Contacto -->
+  <!-- 14 · Envíos y depósito -->
   <section class="sec" style="padding:0"><div class="wrap">
     <div class="map rv">
       <div class="map-i">
-        <div class="kick">Contacto</div>
-        <div class="h2">Estamos para <em>ayudarte</em></div>
-        <div class="mr"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg><div><b>WhatsApp</b><span>Te respondemos y te ayudamos a elegir.</span></div></div>
-        <div class="mr"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envíos a domicilio</b><span>Coordinamos la entrega de tu pedido.</span></div></div>
-        <div class="mr"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg><div><b>@noam_homedeco</b><span>Ideas y novedades en Instagram.</span></div></div>
-        <a class="btn" href="#top">Escribinos</a>
+        <div class="kick">Desde nuestro depósito</div>
+        <div class="h2">A todo <em>el país</em></div>
+        <div class="mr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><div><b>Trabajamos con stock</b><span>Tu pedido sale de nuestro depósito.</span></div></div>
+        <div class="mr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envíos a todo el país</b><span>Bien embalado, hasta tu casa.</span></div></div>
+        <a class="btn" href="#top">Escribinos por WhatsApp</a>
       </div>
-      <div class="map-p"><img src="m/p21.jpg" alt="" loading="lazy"></div>
+      <div class="map-p"><img src="m/deposito.jpg" alt="Depósito de Noam"></div>
     </div>
   </div></section>
 
-  <!-- 13 · Pie -->
+  <!-- 15 · Pie -->
   <footer class="foot"><div class="wrap">
     <div class="fg">
-      <div><img class="flogo" src="m/logo-light.png" alt="Noam"><p>Espacios que cuentan quién sos. Piezas únicas de diseño para tu casa.</p></div>
+      <div><img class="flogo" src="m/logo-light.png" alt="Noam"><p>Lo mejor de decoración para el hogar. Trabajamos con stock y enviamos a todo el país.</p></div>
       <div><h4>Categorías</h4><ul><li>Mesas</li><li>Puff</li><li>Sillas</li><li>Espejos</li><li>Deco y accesorios</li></ul></div>
-      <div><h4>Ayuda</h4><ul><li>Preguntas frecuentes</li><li>Contacto</li><li>WhatsApp</li><li>Instagram</li></ul></div>
+      <div><h4>Contacto</h4><ul><li>WhatsApp</li><li>Instagram @noam.homeandeco</li><li>noam.com.ar</li></ul></div>
       <div><h4>Medios de pago</h4><div class="pay"><span>Transferencia</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Mercado Pago</span></div></div>
     </div>
     <div class="fb"><span>© 2026 Noam Home &amp; Deco</span><span>Diseño y desarrollo: PRAXIS</span></div>
   </div></footer>
-  <a class="wa" href="#top" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.4z"/></svg></a>
-  </main>
+  <a class="wa" href="#top" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.4z"/></svg></a>
  </div>
  </div>
 
@@ -517,22 +500,20 @@ main{position:relative;z-index:1;background:var(--hueso)}
    <div class="fx-g" id="fxg"></div>
  </div>
 
- <!-- modal testimonio -->
- <div class="md" id="md">
-   <div class="md-b">
-     <button class="md-x" type="button" id="md-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-     <form id="tf">
-       <h4>Contanos tu experiencia</h4>
-       <p>Tu opinión ayuda a otros a elegir. Se publica en la web una vez que Noam la revisa.</p>
-       <label class="fld"><span>Tu calificación</span><div class="stars-in" id="si"></div></label>
-       <label class="fld"><span>Tu nombre</span><input id="tn" required maxlength="40" placeholder="Ej.: Sofía, Palermo"></label>
-       <label class="fld"><span>¿Qué producto compraste?</span><input id="tp" maxlength="60" placeholder="Ej.: Puff Lia con guardado"></label>
-       <label class="fld"><span>Tu testimonio</span><textarea id="tx" required maxlength="280" placeholder="¿Qué te pareció tu compra?"></textarea></label>
-       <button class="btn" type="submit">Enviar testimonio</button>
-     </form>
-     <div class="gracias" id="gr"><i><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></i><h4>¡Gracias por tu testimonio!</h4><p style="font-size:14px;color:var(--mu);margin-top:8px;line-height:1.5">En la vista previa ya lo sumamos al carrusel, marcado en rojo. En la web llega al panel de Noam para aprobarlo.</p></div>
-   </div>
- </div>
+ <!-- testimonio -->
+ <div class="md" id="md"><div class="md-b">
+   <button class="md-x" type="button" id="md-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+   <form id="tf">
+     <h4>Contanos tu experiencia</h4>
+     <p>Tu opinión ayuda a otros a elegir. Se publica una vez que Noam la revisa.</p>
+     <label class="fld"><span>Tu calificación</span><div class="si" id="si"></div></label>
+     <label class="fld"><span>Tu nombre</span><input id="tn" required maxlength="40" placeholder="Ej.: Sofía, Rosario"></label>
+     <label class="fld"><span>¿Qué compraste?</span><input id="tp" maxlength="60" placeholder="Ej.: Puff Lia con guardado"></label>
+     <label class="fld"><span>Tu testimonio</span><textarea id="tx" required maxlength="280" placeholder="¿Qué te pareció tu compra?"></textarea></label>
+     <button class="btn" type="submit">Enviar testimonio</button>
+   </form>
+   <div class="gr" id="gr"><h4>¡Gracias!</h4><p>En la vista previa ya aparece en el carrusel. En la web le llega a Noam para aprobarlo.</p></div>
+ </div></div>
 </div>
 </div>
 
@@ -541,81 +522,68 @@ document.documentElement.classList.add('js');
 const $=s=>document.querySelector(s);
 const fmt=n=>'$'+Math.round(n).toLocaleString('es-AR');
 const star='<svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.5 7L12 17.5 5.8 21l1.5-7L2 9.3l7-.7z"/></svg>';
-// anuncios
-const A=['<b>30% OFF</b> pagando con transferencia','<b>2, 3 y 6 cuotas</b> sin interés','<b>2x1 en espejos</b> · elegí tu espejo chico','Envíos a <b>domicilio</b>'];
-$('#bar').innerHTML=[...A,...A,...A,...A].map(t=>`<span>${t}</span>`).join('');
-// categorías (todas, de a 3)
-const C=[['Mesas','Ratonas, de arrime y recibidores','k-mesas'],['Puff','Con guardado y plegables','k-puff'],['Sillas','Bouclé, tapizadas y de diseño','k-sillas'],['Sillones','Giratorios y de bouclé','k-sillon'],['Espejos','De pared y con pie','k-espejos'],['Pie de cama','Con guardado','k-piecama'],['Iluminación','Lámparas y veladores','k-ilum'],['Deco y accesorios','Mármol, bandejas y vasos','k-deco'],['Relojes','Para cada ambiente','k-relojes'],['Sets de baño','Para un baño con estilo','k-bano']];
-const flecha='<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-$('#cl').innerHTML=C.map(c=>`<a class="cat" href="#prods"><img src="m/${c[2]}.jpg" alt="${c[0]}" loading="lazy"><div><div><b>${c[0]}</b><span>${c[1]}</span></div><u>${flecha}</u></div></a>`).join('');
-const cl=$('#cl'),pt=$('#pt');
-const pags=()=>Math.max(1,Math.ceil(cl.scrollWidth/cl.clientWidth-0.05));
-const dibujarPuntos=()=>{const n=pags(),i=Math.round(cl.scrollLeft/cl.clientWidth);pt.innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===Math.min(i,n-1)?'on':''}"></i>`).join('')};
-cl.addEventListener('scroll',dibujarPuntos,{passive:true});addEventListener('resize',dibujarPuntos);
-document.querySelectorAll('.flechas button').forEach(b=>b.addEventListener('click',()=>cl.scrollBy({left:cl.clientWidth*+b.dataset.d,behavior:'smooth'})));
-// productos reales de Noam (precio de su Tiendanube, sin centavos)
+// productos reales de Noam, precios de su Tiendanube sin centavos
 const P=[['Puff Lia Con Guardado',105000,'p00'],['Puff Ocland De Bucle Natural',198500,'p01'],['Espejo Aura De Bucle Natural',184000,'p02'],['Baúl Con Guardado',198000,'p03'],['Puff Luna Con Guardado',125000,'p04'],['Sillón Giratorio Lumina Bucle',414000,'p10'],['Silla Star Negra',174521,'p16'],['Camastro pie de cama Bruma',271000,'p17'],['Mesa Ratona Turner Travertino',355800,'p33'],['Espejo Leni Bucle',314286,'p39'],['Set Mesa Ratona Nube Black',642856,'p37'],['Lámpara Off White Usb',45000,'p26']];
 const OPS=[12,9,21,7,15,6,11,8,5,14,4,18];
 const card=(p,i,promo)=>`<article class="card rv" style="--i:${i%4}" data-i="${P.indexOf(p)}"><div class="ph"><img src="m/${p[2]}.jpg" alt="${p[0]}" loading="lazy">${promo?`<span class="tag">${promo}</span>`:(i<2?'<span class="tag c">Más vendido</span>':'')}</div><div class="in"><h3>${p[0]}</h3><div class="op"><span class="st">${star.repeat(5)}</span>${OPS[P.indexOf(p)]} opiniones</div><div class="pr">${fmt(p[1])}</div><div class="trf"><b>${fmt(p[1]*.7)}</b> con transferencia<em>-30%</em></div><div class="cuo">6 x ${fmt(p[1]/6)} sin interés</div></div></article>`;
 $('#g1').innerHTML=P.slice(0,8).map((p,i)=>card(p,i)).join('');
 $('#g2').innerHTML=[[P[2],'2x1 en espejos'],[P[9],'2x1 en espejos'],[P[8],'30% OFF transfiriendo'],[P[11],'30% OFF transfiriendo']].map((x,i)=>card(x[0],i,x[1])).join('');
-// testimonios (ejemplos: se cargan con los reales desde el panel y se suman los que dejen los clientes)
-const T=[['Sofía','Puff Lia Con Guardado','Llegó perfecto y es más lindo en persona. La tela es suavecita y el guardado me salvó el living.'],['Martín','Mesa Ratona Turner Travertino','La mesa es una obra de arte. Muy buena atención por WhatsApp, me ayudaron a elegir la medida.'],['Carla','Espejo Aura De Bucle Natural','Aproveché el 2x1 de espejos y quedaron hermosos en el recibidor. Súper recomendable.'],['Lucía','Sillón Giratorio Lumina Bucle','Comodísimo y re lindo. Pagué con transferencia y me ahorré un montón.'],['Julián','Set Mesa Ratona Nube Black','Calidad impecable y llegó muy bien embalado. Ya estoy mirando el próximo.']];
+// testimonios de ejemplo (se cargan con los reales y se suman los que dejen los clientes)
+const T=[['Sofía','Puff Lia Con Guardado','Llegó perfecto y es más lindo en persona. La tela es suavecita y el guardado me salvó el living.'],['Martín','Mesa Ratona Turner Travertino','La mesa es una obra de arte. Me ayudaron por WhatsApp a elegir la medida.'],['Carla','Espejo Aura De Bucle Natural','Aproveché el 2x1 de espejos y quedaron hermosos en el recibidor.'],['Lucía','Sillón Giratorio Lumina Bucle','Comodísimo. Pagué con transferencia y me ahorré un montón.'],['Julián','Set Mesa Ratona Nube Black','Llegó muy bien embalado y rapidísimo. Ya estoy mirando el próximo.']];
 let TT=[...T];
-const tc=(t,n)=>`<div class="tc${n?' nuevo':''}"><div class="st">${star.repeat(t[3]||5)}</div><p>«${t[2]}»</p><div class="who"><i>${t[0][0]}</i><div>${t[0]}<small>Compró ${t[1]||'en Noam'}</small><span class="ok"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Compra verificada</span></div></div></div>`;
-const pintarT=nuevo=>{const h=TT.map((t,i)=>tc(t,nuevo&&i===0)).join('');$('#mt').innerHTML=h+h};
-pintarT();
+const tc=(t,n)=>`<div class="tc${n?' nuevo':''}"><div class="st">${star.repeat(t[3]||5)}</div><p>«${t[2]}»</p><div class="who"><i>${t[0][0]}</i><div>${t[0]}<small>Compró ${t[1]||'en Noam'}</small></div></div></div>`;
+const pintarT=n=>{const h=TT.map((t,i)=>tc(t,n&&i===0)).join('');$('#mt').innerHTML=h+h};pintarT();
 // FAQ
-const F=[['¿Cuánto tarda en llegar mi pedido?','Coordinamos la entrega apenas confirmás la compra. Te avisamos por WhatsApp el día y el horario.'],['¿Cómo funciona el 30% OFF?','Elegís transferencia al finalizar la compra y el descuento se aplica solo, en todos los productos.'],['¿Puedo pagar en cuotas?','Sí, en 2, 3 o 6 cuotas sin interés con tarjeta de crédito.'],['¿Cómo funciona el 2x1 en espejos?','Llevás un espejo grande y elegís un espejo chico de regalo entre las opciones de la promo.'],['¿Puedo consultar antes de comprar?','Claro. Escribinos por WhatsApp y te ayudamos con medidas, colores y combinaciones.']];
-$('#fq').innerHTML=F.map((f,i)=>`<details class="fq"${i?'':' open'}><summary>${f[0]}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>${f[1]}</p></details>`).join('');
-// ficha
-const ic={b:'<svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01"/></svg>',c:'<svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg>'};
+const F=[['¿Hacen envíos a todo el país?','Sí. Trabajamos con stock y despachamos desde nuestro depósito a cualquier punto del país, bien embalado.'],['¿Cómo funciona el 30% OFF?','Elegís transferencia al finalizar la compra y el descuento se aplica solo, en todos los productos.'],['¿Puedo pagar en cuotas?','Sí, en 2, 3 o 6 cuotas sin interés con tarjeta de crédito.'],['¿Cómo funciona el 2x1 en espejos?','Llevás un espejo grande y elegís un espejo chico entre las opciones de la promo.'],['¿Puedo consultar antes de comprar?','Claro. Escribinos por WhatsApp y te ayudamos con medidas, colores y combinaciones.']];
+$('#fq').innerHTML=F.map((f,i)=>`<details class="fq"${i?'':' open'}><summary>${f[0]}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary><p>${f[1]}</p></details>`).join('');
+// Noam en movimiento: avanza solo; al bajar va para un lado, al subir para el otro (como Dámelo Siempre)
+const mov=$('#mov');const rH=[1,2,3,4,5,6,7,8].map(i=>`<div class="reel"><video src="m/r/r${i}.mp4" poster="m/r/r${i}.jpg" muted loop playsinline preload="none"></video></div>`).join('');
+mov.innerHTML=rH+rH;
+const sc=$('#screen');
+let x=0,vel=0,dir=1,lastY=0,mitad=0;const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const medir=()=>{mitad=mov.scrollWidth/2};setTimeout(medir,400);addEventListener('resize',medir);
+sc.addEventListener('scroll',()=>{const y=sc.scrollTop,dy=y-lastY;lastY=y;if(dy!==0)dir=dy>0?1:-1;vel+=dy*0.35},{passive:true});
+const paso=()=>{if(!red){vel*=0.92;x-=(0.6*dir)+vel*0.6;if(mitad){if(x<=-mitad)x+=mitad;if(x>0)x-=mitad}mov.style.transform=`translate3d(${x}px,0,0)`}requestAnimationFrame(paso)};requestAnimationFrame(paso);
+// ficha de producto
+const ic={b:'<svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>',c:'<svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg>'};
 const fx=$('#fx');
-function abrir(i){const p=P[i];const otras=[p[2],...P.filter(q=>q!==p).slice(0,2).map(q=>q[2])];
- $('#fxg').innerHTML=`<div class="fx-gal"><div class="fx-th">${otras.map((o,k)=>`<img src="m/${o}.jpg" class="${k?'':'on'}" alt="">`).join('')}</div><div class="fx-main"><img id="fxm" src="m/${p[2]}.jpg" alt="${p[0]}"></div></div>
+function abrir(i){const p=P[i];const o=[p[2],...P.filter(q=>q!==p).slice(0,2).map(q=>q[2])];
+ $('#fxg').innerHTML=`<div class="fx-gal"><div class="fx-th">${o.map((s,k)=>`<img src="m/${s}.jpg" class="${k?'':'on'}" alt="">`).join('')}</div><div class="fx-main"><img id="fxm" src="m/${p[2]}.jpg" alt="${p[0]}"></div></div>
  <div><div class="miga">Inicio › Productos › ${p[0]}</div><h1>${p[0]}</h1><div class="vend"><span class="st">${star.repeat(5)}</span>${OPS[i]} opiniones · +30 vendidos</div>
  <div class="fx-pr"><b>${fmt(p[1])}</b><em>30% OFF transfiriendo</em></div><div class="fx-imp">Precio sin impuestos ${fmt(p[1]/1.21)}</div>
- <div class="box trf2"><span class="ic">${ic.b}</span><div><small>Transferencia · <i>30% OFF</i></small><b>${fmt(p[1]*.7)}</b></div></div>
- <div class="box cuo2"><span class="ic">${ic.c}</span><div><small>6 cuotas sin interés de</small><b>${fmt(p[1]/6)}</b></div><div class="tarj"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>CABAL</span><span>NARANJA</span><span>MERCADO PAGO</span></div></div>
- <p class="fx-desc"><i>Ahorrás ${fmt(p[1]*.3)}</i> pagando con transferencia</p>
- <div class="envio"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envío a domicilio</b><span>Coordinamos día y horario por WhatsApp</span></div></div>
+ <div class="box t2"><span class="ic">${ic.b}</span><div><small>Transferencia · <i>30% OFF</i></small><b>${fmt(p[1]*.7)}</b></div></div>
+ <div class="box c2"><span class="ic">${ic.c}</span><div><small>6 cuotas sin interés de</small><b>${fmt(p[1]/6)}</b></div><div class="tarj"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>CABAL</span><span>NARANJA</span><span>MERCADO PAGO</span></div></div>
+ <p class="ahorro"><i>Ahorrás ${fmt(p[1]*.3)}</i> pagando con transferencia</p>
+ <div class="envio"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envíos a todo el país</b><span>Despachamos desde nuestro depósito</span></div></div>
  <div class="stock">¡Quedan pocas unidades!</div>
- <div class="buy"><div class="qty"><span>−</span>1<span>+</span></div><button class="btn" type="button">Agregar al carrito</button></div>
- <div class="seg2"><div><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Compra protegida</b>Tus datos cuidados en toda la compra.</div></div><div><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg><div><b>¿Dudas con la medida?</b>Te asesoramos por WhatsApp.</div></div></div>
- <div class="fx-tst"><h4>Opiniones de este producto <a id="fx-t">Dejar mi testimonio</a></h4>${tc([T[i%T.length][0],p[0],T[i%T.length][2]])}</div></div>`;
+ <div class="buy"><div class="qty"><span>−</span>1<span>+</span></div><button class="btn" type="button">Agregar al carrito</button></div></div>`;
  fx.classList.add('on');fx.scrollTop=0;
- fx.querySelectorAll('.fx-th img').forEach(im=>im.addEventListener('click',()=>{fx.querySelectorAll('.fx-th img').forEach(x=>x.classList.toggle('on',x===im));$('#fxm').src=im.src}));
- $('#fx-t').addEventListener('click',abrirT);
-}
+ fx.querySelectorAll('.fx-th img').forEach(im=>im.addEventListener('click',()=>{fx.querySelectorAll('.fx-th img').forEach(z=>z.classList.toggle('on',z===im));$('#fxm').src=im.src}));}
 document.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)abrir(+c.dataset.i)});
 $('#fx-x').addEventListener('click',()=>fx.classList.remove('on'));
-// testimonio: modal
-let est=5;const si=$('#si');
-const pintarS=()=>{si.innerHTML=[1,2,3,4,5].map(k=>`<button type="button" data-k="${k}" class="${k>est?'off':''}" aria-label="${k} estrellas">${star}</button>`).join('')};pintarS();
-si.addEventListener('click',e=>{const b=e.target.closest('button');if(b){est=+b.dataset.k;pintarS()}});
-function abrirT(){$('#tf').style.display='';$('#gr').style.display='none';$('#md').classList.add('on')}
-$('#abrir-t').addEventListener('click',abrirT);
+// testimonio
+let est=5;const si=$('#si');const pS=()=>{si.innerHTML=[1,2,3,4,5].map(k=>`<button type="button" data-k="${k}" class="${k>est?'off':''}" aria-label="${k} estrellas">${star}</button>`).join('')};pS();
+si.addEventListener('click',e=>{const b=e.target.closest('button');if(b){est=+b.dataset.k;pS()}});
+$('#abrir-t').addEventListener('click',()=>{$('#tf').style.display='';$('#gr').style.display='none';$('#md').classList.add('on')});
 $('#md-x').addEventListener('click',()=>$('#md').classList.remove('on'));
 $('#md').addEventListener('click',e=>{if(e.target.id==='md')$('#md').classList.remove('on')});
-$('#tf').addEventListener('submit',e=>{e.preventDefault();TT=[[$('#tn').value.trim(),$('#tp').value.trim(),$('#tx').value.trim(),est],...TT];pintarT(true);$('#tf').reset();est=5;pintarS();$('#tf').style.display='none';$('#gr').style.display='block'});
-// aparición
-const sc=$('#screen'),site=$('#site'),hero=$('#top');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{root:sc,threshold:.1});
+$('#tf').addEventListener('submit',e=>{e.preventDefault();TT=[[$('#tn').value.trim(),$('#tp').value.trim(),$('#tx').value.trim(),est],...TT];pintarT(true);$('#tf').reset();est=5;pS();$('#tf').style.display='none';$('#gr').style.display='block'});
+// aparición + videos solo a la vista
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{root:sc,threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-// video del bloque problema/solución solo a la vista
-const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}),{root:sc,threshold:.25});
-document.querySelectorAll('video.av').forEach(v=>{v.muted=true;vo.observe(v)});
-// encabezado como Cry: la barra aparece al pasar el banner
-const alto=()=>{site.style.setProperty('--sh',Math.max(560,sc.clientHeight)+'px')};
-const chk=()=>site.classList.toggle('pasado',sc.scrollTop>hero.offsetHeight*0.82);
-sc.addEventListener('scroll',chk,{passive:true});addEventListener('resize',()=>{alto();chk();dibujarPuntos()});
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')}),1500);
+// siempre en silencio salvo «Activar sonido»; al salir de pantalla o de la pestaña vuelve a silencio
+const silenciar=v=>{v.muted=true;const s=v.parentElement.querySelector('.snd span');if(s)s.textContent='Activar sonido'};
+const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(v.preload==='none')v.preload='auto';v.play().catch(()=>{})}else{v.pause();silenciar(v)}}),{root:sc,threshold:.2});
+document.querySelectorAll('video').forEach(v=>{v.muted=true;vo.observe(v)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(v=>{v.pause();silenciar(v)})});
+addEventListener('pagehide',()=>document.querySelectorAll('video').forEach(v=>{v.pause();silenciar(v)}));
+document.querySelectorAll('.snd').forEach(b=>b.addEventListener('click',()=>{const v=b.parentElement.querySelector('video');document.querySelectorAll('.snd-v').forEach(o=>{if(o!==v)silenciar(o)});v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('span').textContent=v.muted?'Activar sonido':'Silenciar'}));
 // PC / celular
 const dev=$('#device');
-document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.seg button').forEach(x=>x.classList.toggle('on',x===b));dev.classList.toggle('mob',b.dataset.m==='mob');sc.scrollTop=0;fx.classList.remove('on');setTimeout(()=>{alto();chk();dibujarPuntos()},550)}));
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.seg button').forEach(z=>z.classList.toggle('on',z===b));dev.classList.toggle('mob',b.dataset.m==='mob');sc.scrollTop=0;fx.classList.remove('on');setTimeout(medir,600)}));
 if(location.hash==='#celular')document.querySelector('[data-m=mob]').click();
 document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;if(e.key==='m'||e.key==='M')document.querySelector('.seg button:not(.on)').click();if(e.key==='Escape'){fx.classList.remove('on');$('#md').classList.remove('on')}});
-alto();chk();dibujarPuntos();
-setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')}),1200);
 </script>
 </body>
 </html>
